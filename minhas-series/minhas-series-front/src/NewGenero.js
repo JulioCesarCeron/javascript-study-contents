@@ -1,14 +1,14 @@
-import React, { useState } from "react"
-import axios from "axios"
-import { Redirect } from "react-router-dom"
+import React, { useState } from "react";
+import axios from "axios";
+import { Redirect } from "react-router-dom";
 
 const NewGenero = () => {
-  const [name, setName] = useState("")
-  const [success, setSuccess] = useState(false)
+  const [name, setName] = useState("");
+  const [success, setSuccess] = useState(false);
 
   const onChange = e => {
-    setName(e.target.value)
-  }
+    setName(e.target.value);
+  };
 
   const save = () => {
     axios
@@ -16,12 +16,12 @@ const NewGenero = () => {
         name,
       })
       .then(res => {
-        setSuccess(true)
-      })
-  }
+        setSuccess(true);
+      });
+  };
 
   if (success) {
-    return <Redirect to="/generos" />
+    return <Redirect to="/generos" />;
   }
 
   return (
@@ -45,7 +45,7 @@ const NewGenero = () => {
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default NewGenero
+export default NewGenero;

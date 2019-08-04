@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from "react"
-import axios from "axios"
-import { Redirect } from "react-router-dom"
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Redirect } from "react-router-dom";
 
-const EditarGenero = (props) => {
+const EditarGenero = props => {
   const { id } = props.match.params;
-  const [name, setName] = useState("")
-  const [success, setSuccess] = useState(false)
+  const [name, setName] = useState("");
+  const [success, setSuccess] = useState(false);
 
   useEffect(() => {
     axios.get(`/api/genres/${id}`).then(res => {
       setName(res.data.name);
-    })
-  },[id])
+    });
+  }, [id]);
 
   const onChange = e => {
-    setName(e.target.value)
-  }
+    setName(e.target.value);
+  };
 
   const save = () => {
     axios
@@ -23,12 +23,12 @@ const EditarGenero = (props) => {
         name,
       })
       .then(res => {
-        setSuccess(true)
-      })
-  }
+        setSuccess(true);
+      });
+  };
 
   if (success) {
-    return <Redirect to="/generos" />
+    return <Redirect to="/generos" />;
   }
 
   return (
@@ -52,7 +52,7 @@ const EditarGenero = (props) => {
         </button>
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default EditarGenero
+export default EditarGenero;
