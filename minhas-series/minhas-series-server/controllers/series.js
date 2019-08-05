@@ -79,6 +79,7 @@ const getOne = ({ db }) => async(req, res) => {
       name: 'series.name',
       status: 'series.status',
       genre: 'genres.name',
+      genre_id: 'series.genre_id', 
       poster: 'series.poster',
       background: 'series.background'
     })
