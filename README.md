@@ -1,1 +1,1 @@
-# dev-pleno-study-contents
+# JAVASCRIPT-STUDY-CONTENTS
